@@ -101,7 +101,7 @@ const ProjectsCard = ({ title, des, src, githubLink, liveLink }) => {
 
       {/* View Details Button */}
       <button
-        // onClick={openModal}
+        onClick={openModal}
         className="mt-4 p-3 bg-gradient-to-r from-designColor to-[#d41457] text-white font-bold rounded-md hover:scale-105 transition duration-300"
       >
         View Details
