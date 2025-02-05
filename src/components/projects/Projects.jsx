@@ -14,6 +14,10 @@ const projectData = [
     githubLink: "https://github.com/Sakib-01/product-recommendation-client",
     liveLink: "https://prorecco.netlify.app",
     technology: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+    challenges:
+      "Managing real-time updates for user-submitted reviews and optimizing database queries for better performance.",
+    improvements:
+      "Implementing AI-based recommendations and adding authentication to enhance user experience and security.",
   },
   {
     title: "SportsGear - Sports Equipment Website",
@@ -22,14 +26,22 @@ const projectData = [
     githubLink: "https://github.com/Sakib-01/Game-gear-client",
     liveLink: "https://wondrous-dasik-07abea.netlify.app",
     technology: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+    challenges:
+      "Handling cart state management efficiently across different components and ensuring smooth API integration for product listing.",
+    improvements:
+      "Integrating a payment gateway, improving search functionality, and optimizing page load speed for better UX.",
   },
   {
     title: "Career Compass - Career Growth Website",
-    des: "Career Compass is a cutting-edge career counseling platform designed to guide individuals toward their professional aspirations. With its intuitive design and insightful content. It's built with MongoDB, Express, and Node.js for robust functionality.",
+    des: "Career Compass is a cutting-edge career counseling platform designed to guide individuals toward their professional aspirations. With its intuitive design and insightful content, it's built with MongoDB, Express, and Node.js for robust functionality.",
     src: projectThree,
     githubLink: "https://github.com/Sakib-01/career-compass",
     liveLink: "https://delicate-figolla-3ba475.netlify.app",
     technology: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+    challenges:
+      "Implementing a dynamic recommendation system based on user preferences and ensuring smooth navigation across career guidance sections.",
+    improvements:
+      "Adding AI-driven career suggestions, integrating job application tracking, and enhancing UI for a better user experience.",
   },
 ];
 

@@ -9,30 +9,51 @@ const Modal = ({ isOpen, closeModal, projectInfo }) => {
 
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white rounded-lg p-8 max-w-lg w-full">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-2xl font-bold text-gray-900">
-            {projectInfo.title}
-          </h3>
-          <button
-            onClick={closeModal}
-            className="text-gray-500 hover:text-gray-900"
-          >
-            X
-          </button>
-        </div>
-        <p className="text-base mb-4">{projectInfo.des}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
+      <div className="bg-white rounded-lg p-6 w-11/12 md:w-[500px] lg:w-[600px] max-h-[80vh] overflow-y-auto relative shadow-lg">
+        {/* Close Button */}
+        <button
+          onClick={closeModal}
+          className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-xl font-bold"
+        >
+          &times;
+        </button>
+
+        {/* Modal Content */}
+        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+          {projectInfo.title}
+        </h3>
+        <p className="text-base mb-4 text-gray-700">{projectInfo.des}</p>
+
+        {/* Technology Badges */}
+        <div className="flex flex-wrap gap-2 mb-4 justify-center">
           {projectInfo.technology.map((tech, index) => (
             <span
               key={index}
-              className="text-xs px-2 py-1 bg-gray-800 text-white rounded-md"
+              className="text-xs px-3 py-1 bg-gray-800 text-white rounded-md"
             >
               {tech}
             </span>
           ))}
         </div>
-        <div className="flex justify-between">
+
+        {/* Challenges Faced */}
+        <div className="mb-4">
+          <h4 className="text-lg font-semibold text-gray-900">
+            Challenges Faced:
+          </h4>
+          <p className="text-sm text-gray-700">{projectInfo.challenges}</p>
+        </div>
+
+        {/* Potential Improvements */}
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-gray-900">
+            Potential Improvements:
+          </h4>
+          <p className="text-sm text-gray-700">{projectInfo.improvements}</p>
+        </div>
+
+        {/* Links */}
+        <div className="flex justify-center gap-6">
           <a
             href={projectInfo.githubLink}
             target="_blank"
@@ -55,6 +76,7 @@ const Modal = ({ isOpen, closeModal, projectInfo }) => {
   );
 };
 
+// Project Card Component
 const ProjectsCard = ({
   title,
   des,
@@ -62,21 +84,27 @@ const ProjectsCard = ({
   githubLink,
   liveLink,
   technology,
+  challenges,
+  improvements,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const projectInfo = {
+    title,
+    des,
+    githubLink,
+    liveLink,
+    src,
+    technology,
+    challenges,
+    improvements,
   };
-
-  const projectInfo = { title, des, githubLink, liveLink, src, technology };
 
   return (
-    <div className="w-full p-4 xl:px-12 h-auto xl:py-10 rounded-lg shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:to-gray-900 transition-colors duration-1000">
+    <div className="w-full p-4 xl:px-12 h-auto xl:py-10 rounded-lg shadow-lg flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:to-gray-900 transition duration-1000">
       {/* Image Container */}
       <div className="w-full h-60 overflow-hidden rounded-lg flex-shrink-0">
         <img
@@ -97,7 +125,7 @@ const ProjectsCard = ({
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg w-10 h-10 rounded-full bg-black inline-flex justify-center items-center text-gray-400 hover:text-designColor duration-300 cursor-pointer"
+              className="text-lg w-10 h-10 rounded-full bg-black inline-flex justify-center items-center text-gray-400 hover:text-designColor duration-300"
             >
               <BsGithub />
             </a>
@@ -105,7 +133,7 @@ const ProjectsCard = ({
               href={liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg w-10 h-10 rounded-full bg-black inline-flex justify-center items-center text-gray-400 hover:text-designColor duration-300 cursor-pointer"
+              className="text-lg w-10 h-10 rounded-full bg-black inline-flex justify-center items-center text-gray-400 hover:text-designColor duration-300"
             >
               <FaGlobe />
             </a>
@@ -114,18 +142,6 @@ const ProjectsCard = ({
         <p className="text-sm tracking-wide mt-3 hover:text-gray-100 duration-300 flex-grow">
           {des}
         </p>
-
-        {/* Technology Badges */}
-        {/* <div className="flex flex-wrap gap-2 mt-3">
-          {technology.map((tech, index) => (
-            <span
-              key={index}
-              className="text-xs px-2 py-1 bg-gray-700 text-white rounded-md"
-            >
-              {tech}
-            </span>
-          ))}
-        </div> */}
       </div>
 
       {/* View Details Button */}
