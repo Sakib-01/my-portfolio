@@ -22,6 +22,16 @@ const Modal = ({ isOpen, closeModal, projectInfo }) => {
           </button>
         </div>
         <p className="text-base mb-4">{projectInfo.des}</p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {projectInfo.technology.map((tech, index) => (
+            <span
+              key={index}
+              className="text-xs px-2 py-1 bg-gray-800 text-white rounded-md"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
         <div className="flex justify-between">
           <a
             href={projectInfo.githubLink}
@@ -45,7 +55,14 @@ const Modal = ({ isOpen, closeModal, projectInfo }) => {
   );
 };
 
-const ProjectsCard = ({ title, des, src, githubLink, liveLink }) => {
+const ProjectsCard = ({
+  title,
+  des,
+  src,
+  githubLink,
+  liveLink,
+  technology,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -56,7 +73,7 @@ const ProjectsCard = ({ title, des, src, githubLink, liveLink }) => {
     setIsModalOpen(false);
   };
 
-  const projectInfo = { title, des, githubLink, liveLink, src };
+  const projectInfo = { title, des, githubLink, liveLink, src, technology };
 
   return (
     <div className="w-full p-4 xl:px-12 h-auto xl:py-10 rounded-lg shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:to-gray-900 transition-colors duration-1000">
@@ -97,6 +114,18 @@ const ProjectsCard = ({ title, des, src, githubLink, liveLink }) => {
         <p className="text-sm tracking-wide mt-3 hover:text-gray-100 duration-300 flex-grow">
           {des}
         </p>
+
+        {/* Technology Badges */}
+        {/* <div className="flex flex-wrap gap-2 mt-3">
+          {technology.map((tech, index) => (
+            <span
+              key={index}
+              className="text-xs px-2 py-1 bg-gray-700 text-white rounded-md"
+            >
+              {tech}
+            </span>
+          ))}
+        </div> */}
       </div>
 
       {/* View Details Button */}

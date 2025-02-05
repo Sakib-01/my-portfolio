@@ -13,6 +13,7 @@ const projectData = [
     src: projectOne,
     githubLink: "https://github.com/Sakib-01/product-recommendation-client",
     liveLink: "https://prorecco.netlify.app",
+    technology: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
   },
   {
     title: "SportsGear - Sports Equipment Website",
@@ -20,6 +21,7 @@ const projectData = [
     src: projectTwo,
     githubLink: "https://github.com/Sakib-01/Game-gear-client",
     liveLink: "https://wondrous-dasik-07abea.netlify.app",
+    technology: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
   },
   {
     title: "Career Compass - Career Growth Website",
@@ -27,6 +29,7 @@ const projectData = [
     src: projectThree,
     githubLink: "https://github.com/Sakib-01/career-compass",
     liveLink: "https://delicate-figolla-3ba475.netlify.app",
+    technology: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
   },
 ];
 
