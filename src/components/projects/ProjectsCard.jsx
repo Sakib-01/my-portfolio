@@ -104,7 +104,7 @@ const ProjectsCard = ({
   };
 
   return (
-    <div className="w-full p-4 xl:px-12 h-auto xl:py-10 rounded-lg shadow-lg flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:to-gray-900 transition duration-1000">
+    <div className="w-full p-4 xl:px-5 h-auto xl:py-8 rounded-lg shadow-lg flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:to-gray-900 transition duration-1000">
       {/* Image Container */}
       <div className="w-full h-60 overflow-hidden rounded-lg flex-shrink-0">
         <img
@@ -113,9 +113,17 @@ const ProjectsCard = ({
           alt={title}
         />
       </div>
+      {/* scroll image contaner */}
+      {/* <div className="w-full h-60 overflow-hidden rounded-lg flex-shrink-0 relative group">
+        <img
+          className="w-full h-auto object-cover absolute top-0 left-0 transition-transform duration-500 ease-in-out group-hover:translate-y-[-50%]"
+          src={src}
+          alt={title}
+        />
+      </div> */}
 
       {/* Content Section */}
-      <div className="w-full mt-5 flex flex-col gap-6 flex-grow h-[300px]">
+      <div className="w-full mt-5 flex flex-col gap-6 flex-grow h-[250px]">
         <div className="flex items-center justify-between">
           <h3 className="text-base uppercase text-designColor font-normal">
             {title}
@@ -147,7 +155,7 @@ const ProjectsCard = ({
       {/* View Details Button */}
       <button
         onClick={openModal}
-        className="mt-4 p-3 bg-gradient-to-r from-designColor to-[#d41457] text-white font-bold rounded-md hover:scale-105 transition duration-300"
+        className=" p-3 bg-gradient-to-r from-designColor to-[#d41457] text-white font-bold rounded-md hover:scale-105 transition duration-300"
       >
         View Details
       </button>
