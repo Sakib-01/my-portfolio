@@ -112,7 +112,7 @@ const LeftBanner = () => {
             </a>
           </motion.div>
           <a
-            href="https://drive.google.com/file/d/1lN91kFYUKsf1XU7bArXIb2l5Jd6mRGyQ/view?usp=sharing "
+            href="https://drive.google.com/file/d/1GCKK1rSJDLSNy2f0FGXjnwtt6rkhD-w8/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
